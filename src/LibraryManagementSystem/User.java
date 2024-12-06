@@ -5,10 +5,9 @@ public abstract class User {
     private String userId;
     private String name;
     private String contactInfo;
-    private static int userIdCount = 0;
-    private static int totalUsers =0;
+    private static int totalUsers = 0;
 
-    public static int getTotalUsers(){
+    public static int getTotalUsers() {
         return totalUsers;
     }
 
@@ -16,10 +15,9 @@ public abstract class User {
         this.userId = User.generateUniqueId();
     }
 
-    private static String generateUniqueId() {
+    final public static String generateUniqueId() {
         totalUsers++;
-        return String.valueOf(userIdCount++);
-
+        return "User-" + (++totalUsers);
     }
 
     public User(String name, String contactInfo) {
