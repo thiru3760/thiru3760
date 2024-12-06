@@ -16,6 +16,7 @@ public class Member extends User {
 
     public Member() {
         super();
+        borrowedBooksCount = 0;
     }
 
     public Member(int borrowedBooksCount) {
