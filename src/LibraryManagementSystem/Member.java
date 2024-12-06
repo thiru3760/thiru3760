@@ -2,11 +2,15 @@ package LibraryManagementSystem;
 
 public class Member extends User {
     private int borrowedBooksCount;
-    private static int MAX_BORROW_LIMIT = 5;
+    private int MAX_BORROW_LIMIT = 5;
 
     @Override
     public void displayDashboard() {
-        System.out.println("Member Dashboard and Books Borrowed: " + borrowedBooksCount);
+        System.out.println("Member Dashboard and No of Books Borrowed: " + borrowedBooksCount);
+        System.out.println("Can Borrow Books: " + canBorrowBooks());
+        System.out.println("Total Users: " + User.getTotalUsers());
+        System.out.println("name: " + getName());
+        System.out.println("contactInfo: " + getContactInfo());
     }
 
     @Override
