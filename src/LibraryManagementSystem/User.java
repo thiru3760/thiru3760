@@ -11,7 +11,7 @@ public abstract class User {
         this.userId = User.generateUniqueId();
     }
 
-    public static String generateUniqueId() {
+    private static String generateUniqueId() {
         return String.valueOf(userIdCount++);
     }
 
@@ -22,7 +22,7 @@ public abstract class User {
     }
 
     public User(User other) {
-        this.userId = other.userId;
+        this.userId = generateUniqueId();
         this.name = other.name;
         this.contactInfo = other.contactInfo;
 
