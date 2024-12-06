@@ -6,13 +6,20 @@ public abstract class User {
     private String name;
     private String contactInfo;
     private static int userIdCount = 0;
+    private static int totalUsers =0;
+
+    public static int getTotalUsers(){
+        return totalUsers;
+    }
 
     public User() {
         this.userId = User.generateUniqueId();
     }
 
     private static String generateUniqueId() {
+        totalUsers++;
         return String.valueOf(userIdCount++);
+
     }
 
     public User(String name, String contactInfo) {
